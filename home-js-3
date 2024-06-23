@@ -1,0 +1,12 @@
+  function pow(x,y) {
+    let result = x;
+    for (let i = 1; i < y; i++) {
+      result *= x;
+    }
+        return result;
+  }
+
+let x = prompt("Please, type 'x' number: ")
+let y = prompt("Please, type 'y' number: ")
+
+console.log(pow(x,y))
