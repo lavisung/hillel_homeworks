@@ -1,0 +1,49 @@
+let services = {
+    "стрижка": "60 грн",
+    "гоління": "80 грн",
+    "Миття голови": "100 грн",
+
+
+    price() {
+        let total = 0;
+        for (let key in this) {
+            if (!isNaN(parseInt(this[key]))) {
+                total += parseInt(this[key]);
+            }
+        }
+        return total;
+    },
+
+
+    minPrice() {
+        let minimum = Infinity;
+        for (let key in this) {
+            if (!isNaN(parseInt(this[key]))) {
+                let price = parseInt(this[key]);
+                if (price < minimum) {
+                    minimum = price;
+                }
+            }
+        }
+        return minimum;
+    },
+
+        maxPrice() {
+        let maximum = -Infinity;
+        for (let key in this) {
+            if (!isNaN(parseInt(this[key]))) {
+                let price = parseInt(this[key]);
+                if (price > maximum) {
+                    maximum = price;
+                }
+            }
+        }
+        return maximum;
+    }
+};
+
+services['Розбити скло'] = "200 грн";
+
+console.log("Загальна ціна наданих послуг: " + services.price() + " грн");
+console.log("Мінімальна ціна послуги: " + services.minPrice() + " грн");
+console.log("Максимальна ціна послуги: " + services.maxPrice() + " грн");
