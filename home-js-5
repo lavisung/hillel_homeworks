@@ -15,5 +15,7 @@ let dog = {
 };
 
 console.log(dog.getInfo());
+
 dog.age = 10
+
 console.log(dog.getInfo());
