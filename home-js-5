@@ -1,0 +1,19 @@
+let dog = {
+    name: "Funtik",
+    breed: "Yorkshire",
+    color: "Golden Dust",
+
+    getInfo() {
+        let info = "";
+        for (let property in this) {
+            if (typeof this[property] !== "function") {
+                info += `${property}: ${this[property]}\n`;
+            }
+        }
+        return info.trim();
+    }
+};
+
+console.log(dog.getInfo());
+dog.age = 10
+console.log(dog.getInfo());
