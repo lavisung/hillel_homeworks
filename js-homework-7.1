@@ -1,0 +1,26 @@
+var arr = [
+    {
+        userName:"Test",
+        lastName:"Test",
+        email:"test.test@gmail.com"
+    },
+    {
+        userName:"Dmitro",
+        lastName:"Porohov",
+        email:"dmitro.porohov@yahoo.com"
+    },
+    {
+        userName:"Andrii",
+        lastName:"",
+        email:"andrii@mail.ru" // Нам такі не підходять
+    },
+];
+
+ function isEmailValid(emailArray) {
+    const validPattern = /^[^\s@]+(\.[^\s@]+)?@(gmail\.com|yahoo\.com)$/
+    const validEmails = emailArray.filter(user => validPattern.test(user.email))
+    return validEmails.map(user => user.email);
+}
+
+validCheck = isEmailValid(arr)
+console.log(validCheck);
